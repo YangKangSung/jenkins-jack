@@ -751,14 +751,16 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.11",
     "@types/jenkins": "^0.23.1",
     "@types/mocha": "^2.2.42",
     "@types/node": "^20.0.0",
     "@types/open": "^6.1.0",
-    "@types/vscode": "^1.55.0",
+    "@types/request-promise-native": "^1.0.15",
     "@types/xml2js": "0.4.3",
     "tslint": "^5.8.0",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "@types/vscode": "^1.55.0"
   },
   "dependencies": {
     "@types/url-parse": "^1.4.3",
@@ -767,9 +769,10 @@
     "jenkins": "^0.28.1",
     "keytar": "^7.7.0",
     "open": "^6.2.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^0.0.0",
     "undici": "^6.11.0",
     "url-parse": "^1.5.0",
-    "xml2js": "^0.6.2",
-    "cheerio": "^1.2.0"
+    "xml2js": "^0.6.2"
   }
 }

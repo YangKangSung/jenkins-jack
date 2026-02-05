@@ -550,10 +550,10 @@ export class JenkinsService {
             if (undefined !== node) {
                 url = `${this._jenkinsUri}/computer/${node}/scriptText`;
             }
-            let r = httpClient.post({ url: url, form: { script: source }, headers: this._headers });
+                let r = httpClient.post({ url: url, form: { script: source }, headers: this._headers });
             if (undefined !== token) {
                 token.onCancellationRequested(() => {
-                    (r as any).abort();
+                    r.abort();
                 });
             }
             let output = await r;

@@ -375,7 +375,7 @@ export class JenkinsService {
                 let url = `${rootUrl}/api/json?tree=${buildsOrAllBuilds}[${QueryProperties.build}]{0,${numBuilds}}`;
                 ext.logger.info(`getBuilds - ${url}`);
 
-                let requestPromise = httpClient.get(url, { headers: this._headers });
+                let requestPromise = request.get(url, { headers: this._headers });
                 token?.onCancellationRequested(() => {
                     requestPromise.abort();
                     resolve([]);
@@ -471,7 +471,7 @@ export class JenkinsService {
                 rootUrl = this.fromUrlFormat(rootUrl);
                 let url = `${rootUrl}/api/json?tree=jobs[${properties},jobs[${properties},jobs[${properties}]]]`;
                 ext.logger.info(`getJobsFromUrl - ${url}`);
-                let requestPromise = httpClient.get(url, { headers: this._headers });
+                let requestPromise = request.get(url, { headers: this._headers });
                 token?.onCancellationRequested(() => {
                     requestPromise.abort();
                     resolve([]);
@@ -550,10 +550,10 @@ export class JenkinsService {
             if (undefined !== node) {
                 url = `${this._jenkinsUri}/computer/${node}/scriptText`;
             }
-            let r = httpClient.post({ url: url, form: { script: source }, headers: this._headers });
+                let r = httpClient.post({ url: url, form: { script: source }, headers: this._headers });
             if (undefined !== token) {
                 token.onCancellationRequested(() => {
-                    (r as any).abort();
+                    r.abort();
                 });
             }
             let output = await r;
