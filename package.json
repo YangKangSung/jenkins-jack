@@ -751,7 +751,6 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.11",
     "@types/jenkins": "^0.23.1",
     "@types/mocha": "^2.2.42",
     "@types/node": "^20.0.0",
@@ -770,6 +769,7 @@
     "open": "^6.2.0",
     "undici": "^6.11.0",
     "url-parse": "^1.5.0",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "cheerio": "^1.2.0"
   }
 }
