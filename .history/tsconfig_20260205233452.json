@@ -8,7 +8,6 @@
 		"sourceMap": true,
 		"rootDir": "src",
 		"skipLibCheck": true,
-		"noEmitOnError": false,
 		/* Strict Type-Checking Option */
 		"strict": false /* enable all strict type-checking options */,
 		/* Additional Checks */
