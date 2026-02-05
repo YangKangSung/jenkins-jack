@@ -425,7 +425,7 @@ export class JenkinsService {
                 if ((root('textarea')[0] as any).childNodes && 0 >= (root('textarea')[0] as any).childNodes.length) {
                     return '';
                 }
-                let source  = (root('textarea')[0] as any).childNodes[0].data?.toString();
+                let source  = root('textarea')[0].childNodes[0].data?.toString();
                 if (undefined === source) {
                     throw new Error('Could not locate script text in <textarea>.');
                 }

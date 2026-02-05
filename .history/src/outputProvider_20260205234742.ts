@@ -42,7 +42,7 @@ export class OutputPanel implements vscode.OutputChannel {
             let viewColumn = (undefined !== editor) ? editor.viewColumn : this._defaultViewColumn;
 
             let document = await vscode.workspace.openTextDocument(this.uri);
-            await vscode.window.showTextDocument(document, viewColumn, false);
+            this._activeEditor = await vscode.window.showTextDocument(document, viewColumn, false);
 
             // TODO: I don't know why this needs to be called to create a tab, but it does
             // await vscode.commands.executeCommand('vscode.open', this.uri);
